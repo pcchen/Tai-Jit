@@ -1,0 +1,29 @@
+site_name: 臺日大辭典
+site_url: ""
+
+theme:
+  name: material
+  language: ja
+  font: false
+  palette:
+    scheme: default
+  features:
+    - navigation.instant
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+  - ruby
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+extra_css:
+  - stylesheets/tategaki-paged.css
+
+nav:
+  - 首頁: index.md
+  - 風: hong.md

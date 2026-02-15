@@ -1,0 +1,13 @@
+[project]
+name = "tai-jit"
+version = "0.1.0"
+description = "臺日大辭典 digital edition"
+requires-python = ">=3.10"
+dependencies = [
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocs-ruby-plugin",
+    "pymdown-extensions",
+    "fonttools",
+    "brotli",
+]
