@@ -1,0 +1,141 @@
+/* ==========================================================================
+   臺日大辭典 — Vertical Text (Tategaki) Paged Layout
+   ========================================================================== */
+
+/* --- Font faces --- */
+
+@font-face {
+  font-family: "TaiwaneseKana";
+  src: url("../fonts/TaiwaneseKana.woff2") format("woff2");
+  font-display: swap;
+  unicode-range: U+31F0-31FF, U+1B130-1B16F, U+1ABFE-1AC0F;
+}
+
+/* --- Font stack --- */
+
+:root {
+  --cjk-serif: "TaiwaneseKana", "Noto Serif JP", "Source Han Serif",
+    "Source Han Serif JP", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN",
+    "MS PMincho", serif;
+  --page-gap: 2rem;
+  --column-width: 75vh;
+}
+
+/* --- Base vertical writing --- */
+
+.md-content__inner {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--cjk-serif);
+  font-size: 1rem;
+  line-height: 1.8;
+
+  /* Column-based paging */
+  column-width: var(--column-width);
+  column-gap: var(--page-gap);
+  column-fill: auto;
+
+  /* Horizontal scroll for paged columns */
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 75vh;
+  max-height: 80vh;
+  padding: 1rem 1.5rem;
+
+  /* Scroll snap for page-like feel */
+  scroll-snap-type: x mandatory;
+}
+
+.md-content__inner > * {
+  scroll-snap-align: start;
+}
+
+/* Prevent column breaks inside entries */
+.md-content__inner p,
+.md-content__inner h1,
+.md-content__inner h2,
+.md-content__inner h3 {
+  break-inside: avoid;
+}
+
+/* --- Headings --- */
+
+.md-content__inner h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+.md-content__inner h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* --- Ruby / furigana styling --- */
+
+ruby {
+  ruby-align: center;
+}
+
+ruby > rt {
+  font-size: 0.5em;
+  font-weight: normal;
+}
+
+/* --- Links --- */
+
+.md-content__inner a {
+  text-decoration-style: dotted;
+  text-underline-offset: 0.15em;
+}
+
+/* --- Navigation & header stay horizontal --- */
+
+.md-header,
+.md-nav,
+.md-sidebar,
+.md-footer,
+.md-search {
+  writing-mode: horizontal-tb;
+}
+
+/* --- Responsive --- */
+
+@media screen and (max-width: 76.25em) {
+  .md-content__inner {
+    height: 70vh;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --column-width: 85vh;
+  }
+
+  .md-content__inner {
+    height: 65vh;
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+}
+
+/* --- Print --- */
+
+@media print {
+  .md-content__inner {
+    writing-mode: vertical-rl;
+    columns: auto;
+    overflow: visible;
+    height: auto;
+    max-height: none;
+  }
+
+  .md-header,
+  .md-sidebar,
+  .md-footer,
+  .md-search {
+    display: none;
+  }
+}
