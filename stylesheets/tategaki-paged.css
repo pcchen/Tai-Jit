@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "TaiwaneseKana";
-  src: url("../fonts/TaiwaneseKana.woff2") format("woff2");
+  src: url("../fonts/FRBTaiwaneseKana.woff2") format("woff2");
   font-display: swap;
   unicode-range: U+31F0-31FF, U+1B130-1B16F, U+1ABFE-1AC0F;
 }
