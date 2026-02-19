@@ -2,6 +2,8 @@
 
 Digital edition of 臺日大辭典 (Taiwan-Japan Grand Dictionary) — a vertical-text (tategaki), right-to-left paged e-book website.
 
+**Live site**: https://pcchen.github.io/Tai-Jit/
+
 ## Quick Start
 
 ```bash
@@ -13,6 +15,9 @@ uv run mkdocs serve
 
 # Build static site
 uv run mkdocs build
+
+# Deploy to GitHub Pages
+uv run mkdocs gh-deploy --force
 ```
 
 ## Tech Stack

@@ -26,4 +26,8 @@ extra_css:
 
 nav:
   - 首頁: index.md
-  - 風: hong.md
+  - 臺灣語假名: 臺灣台語羅馬字拼音方案音節表_table_kana.md
+  - 臺日大辭典序: 臺日大辭典序.md
+  - 索引表: 索引表.md
+  - 風: h/hong.md
+  - 肉圓: b/bah-uan5_肉圓.md
